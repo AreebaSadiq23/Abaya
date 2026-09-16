@@ -4,12 +4,24 @@ import ProductCard from "../components/ProductCard";
 import { Filter } from "lucide-react";
 
 const products = [
-  { id: 1, name: "Classic Black Abaya", price: 89, image: "/assets/images/product_01_black_embroidery.jpg" },
-  { id: 2, name: "Embroidered Abaya", price: 129, image: "/assets/images/product_02_taupe_abaya.jpg" },
-  { id: 3, name: "Beige Open Abaya", price: 99, image: "/assets/images/product_03_beige_abaya.jpg" },
-  { id: 4, name: "Olive Green Abaya", price: 109, image: "/assets/images/product_04_olive_abaya.jpg" },
-  { id: 5, name: "Pleated Abaya", price: 109, image: "/assets/images/product_05_black_abaya.jpg" },
-  { id: 6, name: "Premium Silk Abaya", price: 149, image: "/assets/images/product_06_black_gold_abaya.jpg" },
+  { id: 1, name: "Classic Black Abaya", price: 89, image: "/assets/images/1.jfif" },
+  { id: 2, name: "Embroidered Taupe", price: 129, image: "/assets/images/2.jfif" },
+  { id: 3, name: "Minimalist Beige", price: 99, image: "/assets/images/3.jfif" },
+  { id: 4, name: "Olive Green Abaya", price: 109, image: "/assets/images/4.jfif" },
+  { id: 5, name: "Pleated Abaya", price: 109, image: "/assets/images/5.jfif" },
+  { id: 6, name: "Premium Silk Abaya", price: 149, image: "/assets/images/6.jfif" },
+  { id: 7, name: "Elegant Abaya 7", price: 119, image: "/assets/images/7.jfif" },
+  { id: 8, name: "Elegant Abaya 8", price: 129, image: "/assets/images/8.jfif" },
+  { id: 9, name: "Elegant Abaya 9", price: 139, image: "/assets/images/9.jfif" },
+  { id: 10, name: "Elegant Abaya 10", price: 149, image: "/assets/images/10.jfif" },
+  { id: 11, name: "Elegant Abaya 11", price: 159, image: "/assets/images/11.jfif" },
+  { id: 12, name: "Elegant Abaya 12", price: 169, image: "/assets/images/12.jfif" },
+  { id: 13, name: "Luxury Abaya 13", price: 119, image: "/assets/images/13.jfif" },
+  { id: 14, name: "Luxury Abaya 14", price: 129, image: "/assets/images/14.jfif" },
+  { id: 15, name: "Luxury Abaya 15", price: 139, image: "/assets/images/15.jfif" },
+  { id: 16, name: "Luxury Abaya 16", price: 149, image: "/assets/images/16.jfif" },
+  { id: 17, name: "Luxury Abaya 17", price: 159, image: "/assets/images/17.jfif" },
+  { id: 18, name: "Luxury Abaya 18", price: 169, image: "/assets/images/18.jfif" },
 ];
 
 export default function ShopPage() {

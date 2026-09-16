@@ -11,6 +11,7 @@ export default function HeroSection() {
         className="object-cover object-center"
         sizes="100vw"
         priority
+        quality={100}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
       <div className="relative z-10 flex flex-col items-center text-center px-4 md:px-6 lg:px-8 space-y-6 md:space-y-10 text-white w-full max-w-4xl">
