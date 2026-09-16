@@ -46,17 +46,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* New Arrivals Section */}
-      <section className="relative h-[50vh] md:h-[60vh] flex items-center px-6 md:px-12">
-        <Image src="/assets/images/product_07_embroidered_black.jpg" alt="New Arrivals" fill className="object-cover object-top" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="relative text-left text-white space-y-4 md:space-y-6 max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-serif font-light">New Arrivals</h2>
-            <p className="text-base md:text-lg">Discover our latest collection.</p>
-            <Button variant="outline" className="rounded-none border-2 border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 transition-all duration-300">Shop Now</Button>
-        </div>
-      </section>
-
       {/* Best Sellers Section */}
       <section className="py-12 md:py-24 px-4 md:px-12">
         <div className="flex justify-between items-end mb-8 md:mb-12">

@@ -27,7 +27,7 @@ const Header = () => {
         <ul className="flex flex-col gap-6 md:flex-row md:gap-8 text-sm uppercase tracking-widest text-center md:text-left">
           <li><Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Home</Link></li>
           <li><Link href="/shop" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Shop</Link></li>
-          <li><Link href="/new-arrivals" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">New Arrivals</Link></li>
+
           <li><Link href="/about" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">About Us</Link></li>
           <li><Link href="/contact" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Contact</Link></li>
         </ul>
