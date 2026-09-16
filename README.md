@@ -1,4 +1,4 @@
-# Abaya E-Commerce Platform
+# Abaya E-Commerce Platform Website
 
 This project is a modern, responsive e-commerce application dedicated to Abayas. It offers a seamless shopping experience, allowing users to browse curated collections, view detailed product information, manage their wishlist, and securely complete their purchases.
 
