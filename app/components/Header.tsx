@@ -18,16 +18,15 @@ const Header = () => {
   return (
     <header className="bg-background/95 backdrop-blur-sm text-foreground border-b border-border p-4 flex justify-between items-center px-4 md:px-12 sticky top-0 z-50">
       <button className="md:hidden p-1" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
 
-      <Link href="/" className="font-serif text-xl md:text-2xl tracking-wider uppercase font-medium">SABAYAH</Link>
+      <Link href="/" className="font-heading text-2xl tracking-[0.2em] uppercase font-light">SABAYAH</Link>
       
       <nav className={`absolute top-full left-0 w-full bg-background border-b border-border p-6 transition-all duration-300 ease-in-out md:static md:w-auto md:border-0 md:p-0 ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 md:max-h-full md:opacity-100'} overflow-hidden md:overflow-visible`}>
-        <ul className="flex flex-col gap-6 md:flex-row md:gap-8 text-sm uppercase tracking-widest text-center md:text-left">
+        <ul className="flex flex-col gap-6 md:flex-row md:gap-8 text-xs font-light uppercase tracking-[0.2em] text-center md:text-left">
           <li><Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Home</Link></li>
           <li><Link href="/shop" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Shop</Link></li>
-
           <li><Link href="/about" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">About Us</Link></li>
           <li><Link href="/contact" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">Contact</Link></li>
         </ul>
@@ -35,11 +34,11 @@ const Header = () => {
 
       <div className="flex gap-4 md:gap-6 items-center">
         <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="p-1 hover:text-primary transition-colors">
-          <Search className="w-5 h-5" />
+          <Search className="w-4 h-4" />
         </button>
-        <Link href="/profile" className="hidden md:block p-1 hover:text-primary transition-colors"><User className="w-5 h-5" /></Link>
+        <Link href="/profile" className="hidden md:block p-1 hover:text-primary transition-colors"><User className="w-4 h-4" /></Link>
         <Link href="/cart" className="relative p-1 hover:text-primary transition-colors">
-          <ShoppingBag className="w-5 h-5" />
+          <ShoppingBag className="w-4 h-4" />
           {cart.length > 0 && <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full w-4 h-4 flex items-center justify-center">{cart.length}</span>}
         </Link>
       </div>
