@@ -1,7 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from 'react';
-
-type CartItem = { id: number; name: string; price: number; image: string; quantity: number };
+import { CartItem } from "@/types/product";
 
 const CartContext = createContext<{
   cart: CartItem[];

@@ -2,8 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
-
-type Product = { id: number; name: string; price: number; image: string };
+import { Product } from "@/types/product";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
