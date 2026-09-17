@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Search, ShoppingBag, User, X, Menu } from 'lucide-react';
+import { Search, ShoppingBag, X, Menu } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { UserButton, SignInButton, Show } from '@clerk/nextjs';
 
 const Header = () => {
   const { cart } = useCart();
@@ -36,13 +37,21 @@ const Header = () => {
         <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="p-1 hover:text-primary transition-colors">
           <Search className="w-4 h-4" />
         </button>
-        <Link href="/profile" className="hidden md:block p-1 hover:text-primary transition-colors"><User className="w-4 h-4" /></Link>
+        
+        <Show when="signed-in">
+            <UserButton />
+        </Show>
+        <Show when="signed-out">
+            <SignInButton />
+        </Show>
+
         <Link href="/cart" className="relative p-1 hover:text-primary transition-colors">
           <ShoppingBag className="w-4 h-4" />
           {cart.length > 0 && <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full w-4 h-4 flex items-center justify-center">{cart.length}</span>}
         </Link>
       </div>
-
+      
+      {/* Search form ... (rest of the file) */}
       {isSearchOpen && (
         <div className="absolute top-full left-0 w-full bg-background border-b border-border p-4 md:p-8 flex justify-center items-center z-50 animate-in fade-in slide-in-from-top-4 duration-200">
           <form onSubmit={handleSearch} className="flex gap-4 w-full max-w-xl items-center">
