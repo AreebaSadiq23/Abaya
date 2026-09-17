@@ -1,11 +1,11 @@
 "use client";
 import { useCart } from "../context/CartContext";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { CartItemList } from "../components/CartItemList";
 
 export default function CartPage() {
-  const { cart, removeFromCart } = useCart();
-  const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
+  const { cart, removeFromCart, updateQuantity } = useCart();
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   
   return (
     <main className="min-h-screen pt-20 px-6 md:px-12 lg:px-24 bg-background max-w-7xl mx-auto">
@@ -15,20 +15,7 @@ export default function CartPage() {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,400px] gap-16">
           <div className="space-y-8">
-            {cart.map((item, i) => (
-              <div key={i} className="flex gap-6 border-b border-border/50 pb-6">
-                <div className="w-24 h-32 bg-muted relative">
-                  <Image src={item.image} alt={item.name} fill className="object-cover" />
-                </div>
-                <div className="flex-grow flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-light tracking-wide text-lg">{item.name}</h3>
-                    <p className="text-sm font-light text-foreground/70">${item.price.toFixed(2)}</p>
-                  </div>
-                  <Button variant="ghost" className="w-max p-0 text-xs uppercase tracking-widest text-foreground/50 hover:text-primary" onClick={() => removeFromCart(item.id)}>Remove</Button>
-                </div>
-              </div>
-            ))}
+            <CartItemList cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} variant="page" />
           </div>
           <div className="bg-[#f9f5f0] p-10 space-y-8 h-max">
             <h2 className="text-2xl font-light font-heading tracking-tight">Order Summary</h2>
