@@ -2,17 +2,27 @@
 import { use, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useCart } from "../../context/CartContext";
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const unwrappedParams = use(params);
   const id = unwrappedParams.id;
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const { addToCart } = useCart();
   
+  // Updated data to include image field for cart functionality
   const product = { 
+    id: parseInt(id),
     name: "Classic Black Abaya", 
     price: 129.00, 
+    image: `/assets/images/${id}.jfif`,
     description: "Experience the perfect blend of tradition and contemporary design. Crafted from premium, breathable fabric, this piece features subtle hand-embroidery and a silhouette that ensures you feel confident and elegant in every movement.",
     features: ["Premium Crepe Fabric", "Subtle Gold Embroidery", "Includes Matching Hijab"]
+  };
+  
+  const handleAddToCart = () => {
+    addToCart(product);
+    alert("Added to cart!");
   };
   
   return (
@@ -60,7 +70,10 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
             </div>
           </div>
 
-          <Button className="w-full rounded-none border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background py-4 sm:py-6 uppercase tracking-[0.2em] text-sm transition-all duration-500">
+          <Button 
+            onClick={handleAddToCart}
+            className="w-full rounded-none border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background py-4 sm:py-6 uppercase tracking-[0.2em] text-sm transition-all duration-500"
+          >
             Add to Cart
           </Button>
         </div>
