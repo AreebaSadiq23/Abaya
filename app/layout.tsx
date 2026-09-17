@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +40,11 @@ export default function RootLayout({
       >
         <body className="min-h-screen flex flex-col">
           <CartProvider>
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
+            <WishlistProvider>
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </WishlistProvider>
           </CartProvider>
         </body>
       </html>
