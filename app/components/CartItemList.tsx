@@ -1,13 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+import { CartItem } from "@/types/product";
 
 interface CartItemListProps {
   cart: CartItem[];
